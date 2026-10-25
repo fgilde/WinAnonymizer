@@ -25,7 +25,12 @@ jobs:
         id: login
         with:
           user: fgilde
-      - run: dotnet nuget push "out/*.nupkg" --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+      - name: Push to NuGet
+        shell: pwsh
+        run: |
+          Get-ChildItem out/*.nupkg | ForEach-Object {
+            dotnet nuget push $_.FullName --api-key ${{ steps.login.outputs.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+          }
       - name: GitHub release
         shell: bash
         env:
