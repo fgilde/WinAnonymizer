@@ -15,6 +15,9 @@ public static class Anonymizer
     public static IAnonymizer Current => _current;
 
     /// <summary>Replaces the active implementation. Passing null resets to the inert default.</summary>
-    public static void Set(IAnonymizer? anonymizer)
-        => _current = anonymizer ?? new NoOpAnonymizer();
+    public static TAnonymizer Set<TAnonymizer>(TAnonymizer anonymizer) where TAnonymizer : IAnonymizer
+    {
+        _current = anonymizer;
+        return anonymizer;
+    }
 }

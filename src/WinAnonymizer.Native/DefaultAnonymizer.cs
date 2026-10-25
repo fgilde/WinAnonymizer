@@ -16,6 +16,8 @@ namespace WinAnonymizer;
 /// <summary>Default <see cref="IAnonymizer"/> implementation. Members are virtual for selective overrides.</summary>
 public class DefaultAnonymizer : IAnonymizer
 {
+    public static DefaultAnonymizer Activate() => Anonymizer.Set(new DefaultAnonymizer());
+
     // ─── Window / Process Identity ─────────────────────────────────────────────
 
     private static readonly string[] _windowTitlePool =
