@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>WinAnonymizer.Native</PackageId>
+    <Description>Native (P/Invoke) IAnonymizer implementation for WinAnonymizer: window title spoofing, PEB image-path spoofing, parent-process spoofing. Opt-in; may trigger antivirus heuristics. See the readme.</Description>
+    <PackageTags>wpf;window;win32;native;privacy;anonymize</PackageTags>
+    <!-- Defender heuristics race on the refint ref-assembly copy; skip it. -->
+    <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WinAnonymizer\WinAnonymizer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>

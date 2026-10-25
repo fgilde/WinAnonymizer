@@ -1,5 +1,6 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/WinAnonymizer/WinAnonymizer.csproj" />
+    <Project Path="src/WinAnonymizer.Native/WinAnonymizer.Native.csproj" />
   </Folder>
 </Solution>
