@@ -1,16 +1,9 @@
+<img src="https://raw.githubusercontent.com/fgilde/WinAnonymizer/main/icon.jpg" width="128" alt="WinAnonymizer" />
+
 # WinAnonymizer
 
-Extension methods for WPF `Window` and native window helpers.
+Small helpers to partially anonymize WPF applications.
 
 ```
 dotnet add package WinAnonymizer
-```
-
-## Release
-
-Push a tag `vX.Y.Z` → GitHub Action packs and publishes to NuGet.
-
-```
-git tag v0.1.0
-git push origin v0.1.0
 ```
